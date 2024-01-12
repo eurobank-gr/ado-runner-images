@@ -26,6 +26,11 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo apt-get update -y && sudo apt-get install -y kubectl
 rm -f /etc/apt/sources.list.d/kubernetes.list
 
+## Install kubelogin
+curl -LO https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-amd64.zip
+unzip -j kubelogin-linux-amd64.zip
+sudo install kubelogin /usr/local/bin/kubelogin
+
 # Install Helm
 curl -fsSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
